@@ -1,16 +1,54 @@
 <template>
-    <div class="card">
-      <div class="card-body" v-for="(empleo, indice) in empleos" :key="indice">
-        <h5 class="card-title">{{ empleo.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ empleo.company }}</h6>
-        <p class="card-text">{{ empleo.location }}</p>
-        <ul>
-            <li v-for="(qual, index) in empleo.qualifications" :key="index">{{ qual }}</li>
-        </ul>
-        <a href="#" class="card-link">{{ empleo.salary }}</a>
-        <a href="#" class="card-link">{{ empleo.posting_date }}</a>
-      </div>
+    <div class="container-fluid">
+        <div class="card mb-3 border jobPosting" v-for="(empleo, indice) in empleos" :key="indice">
+            <div class="card-body p-2 p-md-3" >
+                <div class="row align-items-center">
+                    <div class="justify-content-center align-items-center col-md-1 col-3">
+                        <img class="rounded my-logo" src="../assets/img/peaku-logo.png" alt="Logo de la empresa">
+                    </div>
+                    <div class="col-md-11 col-9">
+                        <div class="row align-items-center">
+                            <a class="text-dark stretched-link d-inline d-md-inline-flex jobLink" href="#">
+                                <h5 class="card-title font-weight-bold pl-md-2 pr-md-2 mb-0 pb-0">{{ empleo.name }}</h5>
+                                <section class="pl-md-2 d-inline d-md-inline-flex align-items-center text-truncate">
+                                    <div class="habilidad text-truncate border border-dark text-dark text-capitalize" v-for="(hab, index) in empleo.qualifications" :key="index">
+                                        {{ hab }}
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                        <div class="row pl-md-2 mt-1 flex-column flex-md-row">
+                            <div class="text-truncate text-capitalize col">
+                                <i class="bi bi-buildings mr-1"></i>
+                                <span>{{ empleo.company }}</span>
+                            </div>
+                            <div class="text-truncate col">
+                                <i class="bi bi-geo-alt mr-1"></i>
+                                <span>{{ empleo.location }}</span>
+                            </div>
+                            <div class="text-truncate col">
+                                <i class="bi bi-cash mr-1"></i>
+                                <span>{{ empleo.salary }}</span>
+                            </div>
+                            <div class="d-none d-md-inline-block col">
+                                <i class="bi bi-people mr-1"></i>
+                                {{ empleo.vacancies }} Vacante(s)
+                            </div>
+                            <div class="text-truncate col">
+                                <i class="bi bi-calendar3 mr-1"></i>
+                                <span>{{ empleo.posting_date }}</span>
+                            </div>
+                            <!-- <div class="text-truncate col">
+                                <i class="bi bi-cash"></i>
+                                <span>{{ empleo.salary }}</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -156,4 +194,32 @@ export default {
 </script>
 
 <style scoped>
+.jobPosting {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.jobPosting:hover {
+    box-shadow: 4px 2px 4px 1px rgb(126, 124, 124);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.jobLink {
+    text-decoration: none;
+}
+
+.my-logo {
+    width: 100%;
+}
+
+.habilidad {
+    font-size: 14px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 0 .5rem;
+    margin: 0 .25rem;
+    cursor: pointer;
+    transition: all .2s ease;
+}
 </style>

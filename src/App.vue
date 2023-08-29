@@ -5,17 +5,21 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import HeaderNavbar from './components/HeaderNavbar.vue';
 import JobCards from './components/JobCards.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HeaderNavbar,
-    JobCards
-  }
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     HeaderNavbar,
+//     JobCards
+//   }
+// }
 </script>
 
-<style></style>
+<style>
+#app {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
