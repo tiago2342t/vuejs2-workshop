@@ -38,10 +38,20 @@
                                 <i class="bi bi-calendar3 mr-1"></i>
                                 <span>{{ empleo.posting_date }}</span>
                             </div>
-                            <!-- <div class="text-truncate col">
-                                <i class="bi bi-cash"></i>
-                                <span>{{ empleo.salary }}</span>
-                            </div> -->
+                            <div class="text-truncate mx-1" v-for="(beneficio, indice) in empleo.benefits" :key="indice">
+                                <span :title="beneficio" role="button" class="border border-dark rounded px-2">
+                                    <i v-show="beneficio === 'Medicina prepagada'" class="bi bi-heart"></i>
+                                    <i v-show="beneficio === 'Horario flexible'" class="bi bi-watch"></i>
+                                    <i v-show="beneficio === 'Trabajo remoto'" class="bi bi-geo-alt"></i>
+                                    <i v-show="beneficio === 'Celebración de días especiales'" class="bi bi-emoji-sunglasses"></i>
+                                    <i v-show="beneficio === 'Celebración de fin de año'" class="bi bi-emoji-sunglasses"></i>
+                                    <i v-show="beneficio === 'Capacitaciones'" class="bi bi-clipboard-check"></i>
+                                    <i v-show="beneficio === 'Certificaciones'" class="bi bi-file-earmark-check"></i>
+                                    <i v-show="beneficio === 'Cursos de inglés'" class="bi bi-globe"></i>
+                                    <i v-show="beneficio === 'Ambiente de trabajo amigable'" class="bi bi-people"></i>
+                                    <i v-show="beneficio === 'Seguros'" class="bi bi-lock"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,7 +78,14 @@ export default {
                         c: "PostgreSQL"
                     },
                     salary: "$ 3.5M - 5M COP",
-                    posting_date: "11/05/2023"
+                    posting_date: "11/05/2023",
+                    benefits: [
+                        "Medicina prepagada",
+                        "Horario flexible",
+                        "Trabajo remoto",
+                        "Seguros",
+                        "Capacitaciones"
+                    ]
                 },
                 {
                     name: "Desarrollador PHP",
@@ -80,7 +97,12 @@ export default {
                         b: "Laravel",
                     },
                     salary: "$ 4M COP",
-                    posting_date: "02/05/2023"
+                    posting_date: "02/05/2023",
+                    benefits: [
+                        "Horario flexible",
+                        "Trabajo remoto",
+                        "Certificaciones"
+                    ]
                 },
                 {
                     name: "Desarrollador Senior",
@@ -105,7 +127,13 @@ export default {
                         b: "Illustrator",
                     },
                     salary: "$ 2M COP",
-                    posting_date: "22/04/2023"
+                    posting_date: "22/04/2023",
+                    benefits: [
+                        "Horario flexible",
+                        "Certificaciones",
+                        "Celebración de días especiales",
+                        "Capacitaciones"
+                    ]
                 },
                 {
                     name: "Enfermera Profesional",
@@ -118,7 +146,13 @@ export default {
                         c: "Min. 1 año de experiencia"
                     },
                     salary: "$ 3M - 4M COP",
-                    posting_date: "10/05/2023"
+                    posting_date: "10/05/2023",
+                    benefits: [
+                        "Medicina prepagada",
+                        "Seguros",
+                        "Celebración de días especiales",
+                        "Ambiente de trabajo amigable"
+                    ]
                 },
                 {
                     name: "Asesor comercial",
@@ -132,7 +166,10 @@ export default {
                         d: "Herramientas ofimáticas"
                     },
                     salary: "$ 2.2M COP + prestaciones y comisiones",
-                    posting_date: "11/05/2023"
+                    posting_date: "11/05/2023",
+                    benefits: [
+                        "Ambiente de trabajo amigable"
+                    ]
                 },
                 {
                     name: "Operario de aseo",
@@ -157,7 +194,12 @@ export default {
                         c: "Profesional en culinaria"
                     },
                     salary: "$ 2M COP",
-                    posting_date: "30/04/2023"
+                    posting_date: "30/04/2023",
+                    benefits: [
+                        "Ambiente de trabajo amigable",
+                        "Seguros",
+                        "Medicina prepagada"
+                    ]
                 },
                 {
                     name: "DevOps",
@@ -170,7 +212,15 @@ export default {
                         c: "Node JS"
                     },
                     salary: "$ 7M COP",
-                    posting_date: "19/04/2023"
+                    posting_date: "19/04/2023",
+                    benefits: [
+                        "Medicina prepagada",
+                        "Ambiente de trabajo amigable",
+                        "Cursos de inglés",
+                        "Capacitaciones",
+                        "Trabajo remoto",
+                        "Horario flexible"
+                    ]
                 },
                 {
                     name: "Call Center (Medio tiempo)",
@@ -183,10 +233,15 @@ export default {
                         c: "Herramientas ofimáticas"
                     },
                     salary: "$ 2M COP + prestaciones y bonos",
-                    posting_date: "28/04/2023"
+                    posting_date: "28/04/2023",
+                    benefits: [
+                        "Cursos de inglés",
+                        "Capacitaciones",
+                        "Trabajo remoto",
+                        "Horario flexible"
+                    ]
                 },
-            ],
-
+            ]
         }
     },
 }
