@@ -256,8 +256,6 @@ export default {
 
 .jobPosting:hover {
     box-shadow: 4px 2px 4px 1px rgb(126, 124, 124);
-    cursor: pointer;
-    transition: all .2s ease;
 }
 
 .jobLink {
